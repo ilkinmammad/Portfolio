@@ -1,0 +1,28 @@
+.div1{
+
+    
+}
+img{
+    position: absolute;
+    z-index: -1;
+   
+
+}
+body{
+    border: 10px solid;
+    width: 70%;
+    height: 50%;
+    
+
+}
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.div2{
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    color: red;
+}

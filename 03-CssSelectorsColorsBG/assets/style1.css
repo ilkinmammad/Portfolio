@@ -1,0 +1,22 @@
+.img{
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    padding: 110px;
+  
+}
+
+.div1{
+    
+
+}
+
+.div2{
+    text-align: center;
+    width: 50%;
+    color: red;
+    padding: 200px;
+  
+ 
+}
