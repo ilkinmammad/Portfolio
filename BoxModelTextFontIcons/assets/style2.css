@@ -1,0 +1,63 @@
+.div1{
+    border: 3px solid red; 
+    border-radius: 90px; 
+    background-color: rgb(111, 255, 0);
+    width: 22%;
+    height: 150px;
+}
+.div2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+}
+.div3{
+    border: 3px solid red; 
+    border-radius: 25% 10%; 
+    background-color: rgb(255, 157, 0);
+    width: 22%;
+    height: 150px;
+    margin-left: 100px;
+}
+.div4{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+}
+.div5{
+    border: 3px solid red; 
+    border-radius: 35px 10em 10%; 
+    background-color: rgb(0, 255, 225);
+    width: 22%;
+    height: 150px;
+    margin-top: 90px;
+}
+.div6{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+}
+.div7{
+    border: 3px solid rgb(255, 38, 0); 
+    border-radius:  50px 50% 50cm 50em; 
+    background-color: rgb(0, 136, 255);
+    width: 22%;
+    height: 150px;
+    margin-left: 100px;
+    margin-top: 90px;
+}
+.div8{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+}
+.esas{
+    display: flex;
+    
+}
+.esas2{
+    display: flex;
+}
