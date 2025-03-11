@@ -1,0 +1,165 @@
+
+.nav_area{
+    background-color: rgb(44 62 80);
+    height: 8rem;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration-line: none;
+}
+.logo{
+font-weight: bold;
+font-size: 2.3rem;    
+}
+
+.navbar{
+font-size: 1.5rem;
+text-transform: uppercase;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+}
+.navbar .nav_list{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.main_header{
+    background-color: rgb(27, 187, 155);
+    height: 550px;
+}
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    height: 550px;
+    color: rgb(255, 255, 255);
+}
+h1{
+    font-weight: bold;
+font-size: 3rem;    
+}
+.start p{
+    font-size: 2rem;
+}
+.starline{
+    width: 10rem;
+    height: 0.3rem;
+    border-radius: 0.2rem;
+    background-color: white;
+}
+.star{
+    display: flex;
+    gap: 1rem;
+}
+.start2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 5rem;
+    color: rgb(0, 0, 0);
+
+    
+}
+.star2{
+    display: flex;
+    gap: 1rem;
+}
+.starline2{
+    width: 10rem;
+    height: 0.3rem;
+    border-radius: 0.2rem;
+    background-color: rgb(0, 0, 0);
+}
+.card_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    
+}
+.card{
+width: 360px;
+height: 210px;
+border-radius: 10px;
+}
+.card img{
+    width: 360px;
+    height: 210px;
+    border-radius: 10px;
+    }
+.container{
+    max-width: 1300px;
+}
+.about{
+    background-color: rgb(27, 187, 155) ;
+    height: 550px;
+    margin-top:  100px;  
+}
+.start3{
+    display: flex;
+    flex-direction: column;
+    height:550px ;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.p{
+    display: flex;
+    max-width: 400px;
+    gap: 2rem;
+}
+.starline3{
+    width: 10rem;
+    height: 0.3rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+}
+.star3{
+    display: flex;
+    gap: 1rem;
+    color: white;
+}
+div .p{
+    color: white;
+    font-size: 1.2rem;
+}
+.start3 h2{
+    color: white;
+}
+.butond{
+    width: 140px;
+    height: 55px;
+    border-radius: 6px;
+}
+button{
+    width: 140px;
+    height: 55px;
+    border-radius: 6px;
+    border-color: white;
+    background-color:rgb(27, 187, 155) ;
+    color: white;
+}
+h2{
+  font-size: 2.4rem;
+}
+.foot_area{
+    background-color:rgb(44 62 80);
+    height: 8rem;
+    color: white;
+    margin-top: 40px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
