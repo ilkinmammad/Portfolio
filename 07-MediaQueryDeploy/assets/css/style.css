@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1150px;
+    min-width: 800px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 110px;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.list li {
+    list-style-type: none;
+    font-size: 16px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+b {
+    font-size: 23px;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 25px;
+}
+
+.navsol {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navsag {
+    display: flex;
+    align-items: center;
+}
+
+.burger {
+    display: none;
+}
+
+.sol {
+    width: 630px;
+    height: 540px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    width: 630px;
+    height: 540px;
+}
+
+.sekil {
+    width: 287px;
+    height: 230px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.sekil img {
+    width: 287px;
+    height: 256px;
+    position: absolute;
+}
+
+.esas {
+    display: flex;
+    gap: 50px;
+    margin: 30px 100px;
+    color: #fff;
+}
+
+.sol img {
+    height: 540px;
+    width: 630px;
+
+}
+
+main {
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+}
+
+.btn1 {
+    background-color: transparent;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+}
+.salam {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+
+    h1 {
+        color: #fff;
+        margin-top: -10px;
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+}
+
+.salam1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hvr{
+    width: 287px;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    opacity: 0.9;
+    display: none;
+}
+.sekil:hover{
+    .hvr{
+        display: block;
+        position: absolute;
+    }
+    .sekil img {
+        height: 540px;
+        width: 630px;
+    
+    }
+    .sekil{
+        width: 630px;
+    height: 540px;
+    }
+}

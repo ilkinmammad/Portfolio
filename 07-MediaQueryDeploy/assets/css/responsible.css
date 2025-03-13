@@ -1,0 +1,17 @@
+@media (max-width:800px) {
+    .list{
+        display: none;
+    }
+    .burger{
+        margin-right: 50px;
+        display: block;
+    }
+   
+
+}
+@media (max-width:1000px) {
+    .esas{
+        flex-wrap: wrap;
+    }
+    
+}
