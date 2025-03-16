@@ -6,12 +6,82 @@
         margin-right: 50px;
         display: block;
     }
-   
+  
+}
+@media (max-width:1050px){
+
+.sekil img{
+width: 630px;
+height: 540px;
 
 }
-@media (max-width:1000px) {
-    .esas{
-        flex-wrap: wrap;
-    }
-    
+.sag{
+    margin-left: 172px;
+    gap: 350px;
+} 
+.esas{
+    flex-wrap: wrap;
+  
+}
+.hr{
+    margin-top: 350px;
+}
+.salam1{
+    height: 540px;
+}
+.explore{
+    flex-direction: column;
+}
+.sag_content{
+    display: flex;
+  
+}
+
+.contsekil{
+    width: 700px;
+    height: 700px;
+}
+.contsekil img{
+    width: 700px;
+    height: 700px;
+}
+.contsekil1{
+    width: 700px;
+    height: 350px;
+}
+.contsekil1 img{
+    width: 700px;
+    height: 350px;
+}
+.contsekil4{
+    width: 700px;
+    height: 350px;
+}
+.contsekil4 img{
+    width: 700px;
+    height: 350px;
+}
+.sbscrb{
+    display: flex;
+    flex-direction: column;
+}
+.kids{
+    margin-left: 30px;
+}
+.sol_content{
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.foot_yuxari{
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0;
+   
+}
+footer{
+    height: 1200px;
+}
+
+
 }

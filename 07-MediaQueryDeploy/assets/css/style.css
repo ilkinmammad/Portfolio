@@ -60,7 +60,7 @@ b {
 
 .sol {
     width: 630px;
-    height: 540px;
+    
     position: relative;
     display: flex;
     justify-content: center;
@@ -74,7 +74,7 @@ b {
     gap: 30px;
 
     width: 630px;
-    height: 540px;
+    
 }
 
 .sekil {
@@ -106,6 +106,7 @@ b {
 main {
     margin: 0 auto;
     color: rgb(0, 0, 0);
+    font-family: Poppins;
 }
 
 .btn1 {
@@ -162,4 +163,218 @@ main {
         width: 630px;
     height: 540px;
     }
+}
+
+.hr{
+    margin: 50px 0;
+}
+h2{
+    font-size:35px;
+}
+.kid_card{
+    width: 350px;
+    height: 480px;
+    padding-top: 50px;
+}
+.kid_card img{
+    width: 350px;
+    height: 370px;
+}
+.kids_sekil{
+    display: flex;
+    gap: 50px;
+}
+ul li{
+    list-style-type: none;
+}
+ul{
+    display: flex;
+}
+.kid_value{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.card_value{
+    padding-top: 30px;
+}
+.pk{
+color: gray;
+    padding-top: 10px;
+}
+.sol_content{
+    a{
+        color: blue;
+    }
+    p{
+        color: gray;
+    }
+    .sol_ic{
+        padding: 10px;
+        width: 570px;
+    height: 540px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    }
+}
+.icnp{
+    display: flex;
+    gap: 5px;
+    p{
+        color: black;
+    }
+}
+.scbtn{
+    width: 140px;
+    height: 50px;
+    background-color: transparent;   
+}
+.scbtn:hover{
+    background-color: black;
+    color: #fff;
+}
+.sag_content{
+    width: 570px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 30px;
+    
+}
+.contsekil{
+    width: 255px;
+    height: 255px;
+    img{
+        width: 255px;
+    height: 255px;
+    }
+}
+.explore{
+    display: flex;
+    margin-bottom: 30px;
+}
+.contsekil1{
+    width: 255px;
+    height: 255px;
+    img{
+        width: 255px;
+    height: 255px;
+    }
+}
+.contsekil4{
+    width: 255px;
+    height: 255px;
+    img{
+        width: 255px;
+    height: 255px;
+    }
+}
+.socialimg{
+    display: flex;
+    margin: 50px 15px;
+}
+.imgs{
+    width: 185px;
+    height: 185px;
+    
+}
+.imgs img{
+    width: 185px;
+    height: 185px;
+}
+.social p{
+    color: gray;
+}
+.social{
+    margin-top: 50px;
+}
+.subscribing{
+    padding: 0 15px;
+    width: 760px;
+    height: 282px;
+
+}
+.inpt input{
+    width: 300px;
+    height: 30px;
+    padding: 0 20px;
+}
+.inpt{
+margin: 40px 0;
+
+}
+
+.subscribing h2{
+font-size: 40px;
+}
+.subscribing p{
+    margin-top: 20px;
+    color: gray;
+}
+.sag1{
+    width: 190px;
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+}
+.sbscrb{
+    margin-top: 30px;
+    display: flex;
+    margin-bottom: 60px;
+}
+.sag_sbscrb{
+    display: flex;
+    font-size: 10px;
+}
+.sag1 p{
+    color: gray;
+    font-size: 15px;
+}
+footer{
+    background-color: #2a2a2a;
+    height: 480px;
+    margin-top: 20px;
+    color: #fff;
+    padding-top: 60px;
+}
+.footcont{
+    display: flex;
+    flex-direction: column;
+    width: 285px;
+    height: 205px;
+    gap: 20px;
+}
+footer a{
+    color: #fff;
+}
+.hexafoot{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.foot_yuxari{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.end{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.endicon{
+    color: rgb(107, 213, 213);
+    font-size: 28px;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+.end a{
+    color:rgb(107, 213, 213) ;
 }
