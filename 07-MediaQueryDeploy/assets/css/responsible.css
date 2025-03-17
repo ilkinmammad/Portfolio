@@ -1,4 +1,4 @@
-@media (max-width:800px) {
+@media (max-width:1000px) {
     .list{
         display: none;
     }
@@ -16,8 +16,8 @@ height: 540px;
 
 }
 .sag{
-    margin-left: 172px;
-    gap: 350px;
+    margin-left: 82px;
+    gap: 30px;
 } 
 .esas{
     flex-wrap: wrap;
@@ -34,7 +34,6 @@ height: 540px;
 }
 .sag_content{
     display: flex;
-  
 }
 
 .contsekil{
@@ -56,6 +55,10 @@ height: 540px;
 .contsekil4{
     width: 700px;
     height: 350px;
+}
+
+.sekil {
+    width: 90%;
 }
 .contsekil4 img{
     width: 700px;

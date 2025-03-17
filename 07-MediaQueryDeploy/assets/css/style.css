@@ -11,12 +11,26 @@
 .container {
     margin: 0 auto;
     max-width: 1150px;
-    min-width: 800px;
+}
+
+.container2 {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background: #fff;
+    z-index: 1;
+    justify-content: center;
 }
 
 .navbar {
     display: flex;
     align-items: center;
+    gap: 200px;
     height: 110px;
     justify-content: space-between;
     font-family: sans-serif;
@@ -71,15 +85,11 @@ b {
 .sag {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-
-    width: 630px;
-    
+    gap: 15px;
 }
 
 .sekil {
-    width: 287px;
-    height: 230px;
+    width: 40%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -92,10 +102,18 @@ b {
 
 .esas {
     display: flex;
-    gap: 50px;
+    justify-content: center;
+    gap: 25px;
     margin: 30px 100px;
     color: #fff;
+    width: 100%;
 }
+
+.sol {
+    width: 40%;
+}
+
+
 
 .sol img {
     height: 540px;
@@ -107,6 +125,7 @@ main {
     margin: 0 auto;
     color: rgb(0, 0, 0);
     font-family: Poppins;
+    margin-top: 150px;
 }
 
 .btn1 {
