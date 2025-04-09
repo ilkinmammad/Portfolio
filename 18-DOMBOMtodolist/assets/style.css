@@ -1,0 +1,118 @@
+.inputs{
+    display: flex;
+    width: 600px;
+    gap: 50px;
+}
+
+ .btns {
+    display: flex;
+    width: 600px;
+    gap: 40px;
+
+}
+
+.inputs input {
+    width: 220px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.rdiv{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.result {
+    padding: 10px;
+    margin-top: 20px;
+    width: 220px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* // task22222222222222222222222222222222222222222 */
+
+
+/* body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 9px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul.list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c8cec;
+    height: 30px;
+}
+
+.list-elem {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    right: 10px;
+    top: 50%;
+
+} */
+
