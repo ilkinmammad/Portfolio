@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
             password: password.value,
             confirmpassword: confirmpassword.value,
             isLogined: false ,
-            id
+            id,
+            wishlist:[]
         }
         users.push(newUser)
         localStorage.setItem("users", JSON.stringify(users))
