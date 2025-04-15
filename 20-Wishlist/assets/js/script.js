@@ -243,107 +243,179 @@ let products = [
 
 
 
+  document.addEventListener("DOMContentLoaded", () => {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let loginBtn = document.querySelector(".login");
+    let registerBtn = document.querySelector(".register");
+    let logoutBtn = document.querySelector(".logout");
+    let usernameBtn = document.querySelector(".username");
+    let currentUser = users.find((user) => user.isLogined === true);
+    let userIndex = users.findIndex((user) => user.id == currentUser.id)
 
-document.addEventListener("DOMContentLoaded" , () => {
-    let users = JSON.parse(localStorage.getItem("users"))
+    let basket = currentUser.basket || []
+  
+    function updateUserStatus() {
+      users = JSON.parse(localStorage.getItem("users")) || [];
+      currentUser = users.find((user) => user.isLogined === true);
+  
+      if (currentUser) {
+        if (usernameBtn) usernameBtn.textContent = currentUser.username;
+        if (loginBtn) loginBtn.classList.add("d-none");
+        if (registerBtn) registerBtn.classList.add("d-none");
+        if (logoutBtn) logoutBtn.classList.remove("d-none");
+      } else {
+        if (logoutBtn) logoutBtn.classList.add("d-none");
+        if (loginBtn) loginBtn.classList.remove("d-none");
+        if (registerBtn) registerBtn.classList.remove("d-none");
+        if (usernameBtn) usernameBtn.textContent = "Username";
+      }
+    }
+  
+    function logout() {
+      if (currentUser) {
+        toasts("Cixis etdiniz");
+  
+        currentUser.isLogined = false;
+        localStorage.setItem("users", JSON.stringify(users));
+        updateUserStatus();
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1000);
+      }
+    }
+  
+    if (logoutBtn) logoutBtn.addEventListener("click", logout);
+  
+    function createUserCard() {
+      products.forEach((product) => {
+        let card = document.createElement("div");
+        card.classList.add("card");
 
-    let loginedUser = users.find((user)=> user.isLogined == true)
-    let login= document.querySelector(".login")
-    let register= document.querySelector(".register")
-    let logout= document.querySelector(".logout")
-    
-    if (loginedUser) {
-        login.classList.add("d-none")
-        register.classList.add("d-none")
-        logout.classList.remove("d-none")
-    } else{
-        login.classList.remove("d-none")
-        register.classList.remove("d-none")
-        logout.classList.add("d-none")
+        let image = document.createElement("div");
+        image.classList.add("card-image");
+
+        let img = document.createElement("img");
+
+        let cardContent = document.createElement("div");
+        cardContent.classList.add("card-content");
+
+        let cardTitle = document.createElement("h2");
+        cardTitle.classList.add("card-title");
+
+        let category = document.createElement("p");
+        category.classList.add("card-category");
+
+        let cardFooter = document.createElement("div");
+        cardFooter.classList.add("card-footer");
+
+        let price = document.createElement("span");
+        price.classList.add("card-price");
+
+        let rating = document.createElement("div");
+        rating.classList.add("card-rating");
+
+        let ratingStar = document.createElement("span");
+
+        let count = document.createElement("span");
+
+        let heart = document.createElement("i");
+        heart.classList.add("fa-regular", "fa-heart", "card-heart");
+        heart.addEventListener("click", () => {
+          toggleAddWishlist(product.id, heart);
+        });
+  
+        let addBtn = document.createElement("button");
+        addBtn.classList.add("btn", "btn-primary", "add-to-cart");
+        addBtn.textContent = "Add to Basket";
+        addBtn.addEventListener("click", () => addBasket(product.id))
+
+
+
+
+        rating.append(ratingStar, count);
+        cardFooter.append(price, rating);
+        cardContent.append(cardTitle, category);
+        image.append(img);
+        card.append(heart, image, cardContent, addBtn);
+        let cards = document.querySelector(".cards");
+        cards.append(card);
+  
+        img.src = product.image;
+        cardTitle.textContent = product.title.slice(0, 20) + "...";
+        category.textContent = product.category;
+        price.textContent = `$${product.price}`;
+        ratingStar.textContent = product.rate;
+        count.textContent = `(${product.rating.count})`;
+      });
+    }
+  
+    function toggleAddWishlist(productId, heartElement) {
+      if (!currentUser) {
+        toasts("Please login for add to wishlist");
+        return;
+      }
+  
+      if (!Array.isArray(currentUser.wishList)) {
+        currentUser.wishList = [];
+      }
+  
+      let userIndex = users.findIndex(
+        (user) => user.username === currentUser.username
+      );
+  
+      if (currentUser.wishList.some((item) => item.id === productId)) {
+        let productIndex = currentUser.wishList.findIndex(
+          (product) => product.id === productId
+        );
+        currentUser.wishList.splice(productIndex, 1);
+        users[userIndex] = currentUser;
+        localStorage.setItem("users", JSON.stringify(users));
+  
+        heartElement.classList.add("fa-regular");
+        heartElement.classList.remove("fa-solid");
+        toasts("Product removed from wishlist");
+      } else {
+        let product = products.find((product) => product.id === productId);
+        if (product) {
+          currentUser.wishList.push(product);
+          users[userIndex] = currentUser;
+          localStorage.setItem("users", JSON.stringify(users));
+  
+          heartElement.classList.remove("fa-regular");
+          heartElement.classList.add("fa-solid");
+          toasts("Product added to wishlist");
+        } else {
+          toasts("Product not found");
+        }
+      }
     }
 
-    let logoutUser = () => {
-    loginedUser.isLogined = false
-    localStorage.setItem("users",JSON.stringify(users))
-    
-}
-logout.addEventListener("click", logoutUser)
-
-function createUserCard() {
-    
-products.forEach(product => {
-    let card = document.createElement("div")
-    card.classList.add("card")
-    
-    let heartIcon = document.createElement("i")
-    heartIcon.classList.add("fa-regular" , "fa-heart" ,"card-heart")
-
-    heartIcon.addEventListener("click" , toggleUserWishlist(product.id))
-    
-    let cardImage = document.createElement("div")
-    cardImage.classList.add("card-image")
-    
-    let img = document.createElement("img")
-    img.classList.add("image")
-    img.src=`${product.image}`
-    
-    let cardContent = document.createElement("div")
-    cardContent.classList.add("card-content")
-    
-    let cardTitle = document.createElement("h4")
-    cardTitle.classList.add("card-title")
-    cardTitle.textContent = `${product.title}`.slice(1,20)
-    
-    let cardCategory = document.createElement("p")
-    cardCategory.classList.add("card-category")
-    cardCategory.textContent = `${product.category}`
-    
-    let cardFooter = document.createElement("div")
-    cardFooter.classList.add("card-footer")
-    
-    let cardPrice = document.createElement("span")
-    cardPrice.classList.add("card-price")
-    cardPrice.textContent = `${product.price}`
-    
-    let cardRating = document.createElement("div")
-    cardRating.classList.add("card-rating")
-    
-    let cardRate = document.createElement("span")
-    cardRate.classList.add("card-rate")
-    cardRate.textContent = `${product.rating.rate}`
-    
-    let cardReviews = document.createElement("span")
-    cardReviews.classList.add("card-reviews")
-    cardReviews.textContent = `${product.rating.count}`
-
-    
-    
-    cardRating.append(cardRate,cardReviews)
-    cardFooter.append(cardPrice,cardRating)
-    cardContent.append(cardTitle,cardCategory,cardFooter)
-    cardImage.appendChild(img)
-    card.append(cardImage,cardContent,heartIcon)
-    
-    let cards = document.querySelector(".cards")
-    
-    cards.appendChild(card)
-    
-});
-
-}
-
-function toggleUserWishlist() {
-    
-}
+    function addBasket(productId) {
+      
+      let findProductIndex = currentUser.basket.findIndex((produc)=> product.id == productId)
+      let product = products.find((item)=> item.id == productId)
+      if (findProductIndex == -1) {
+        basket.push({...product, count :1})
+      }else{
+        product.basket.count++
+      }
+      localStorage.setItem("users",JSON.stringify(users))
+    }
+  
 
 
-
-createUserCard()
-
-
-
-
-
-
-
-})
+    function toasts(text) {
+      Toastify({
+        text: text,
+        duration: 2000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+    }
+  
+    updateUserStatus();
+    createUserCard();
+  });
