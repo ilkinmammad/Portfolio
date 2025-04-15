@@ -242,6 +242,7 @@ let products = [
   ]
 
 
+
   document.addEventListener("DOMContentLoaded", () => {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let loginBtn = document.querySelector(".login");
@@ -249,11 +250,13 @@ let products = [
     let logoutBtn = document.querySelector(".logout");
     let usernameBtn = document.querySelector(".username");
     let currentUser = users.find((user) => user.isLogined === true);
-  
+    
+    let basket = currentUser.basket || []
+    
     function updateUserStatus() {
       users = JSON.parse(localStorage.getItem("users")) || [];
       currentUser = users.find((user) => user.isLogined === true);
-  
+      
       if (currentUser) {
         if (usernameBtn) usernameBtn.textContent = currentUser.username;
         if (loginBtn) loginBtn.classList.add("d-none");
@@ -266,11 +269,11 @@ let products = [
         if (usernameBtn) usernameBtn.textContent = "Username";
       }
     }
-  
+    
     function logout() {
       if (currentUser) {
         toasts("Cixis etdiniz");
-  
+        
         currentUser.isLogined = false;
         localStorage.setItem("users", JSON.stringify(users));
         updateUserStatus();
@@ -279,47 +282,63 @@ let products = [
         }, 1000);
       }
     }
-  
+    
     if (logoutBtn) logoutBtn.addEventListener("click", logout);
-  
+    
     function createUserCard() {
       products.forEach((product) => {
         let card = document.createElement("div");
         card.classList.add("card");
+        
         let image = document.createElement("div");
         image.classList.add("card-image");
+        
         let img = document.createElement("img");
+        
         let cardContent = document.createElement("div");
         cardContent.classList.add("card-content");
+        
         let cardTitle = document.createElement("h2");
         cardTitle.classList.add("card-title");
+        
         let category = document.createElement("p");
         category.classList.add("card-category");
+        
         let cardFooter = document.createElement("div");
         cardFooter.classList.add("card-footer");
+        
         let price = document.createElement("span");
         price.classList.add("card-price");
+        
         let rating = document.createElement("div");
         rating.classList.add("card-rating");
+        
         let ratingStar = document.createElement("span");
+        
         let count = document.createElement("span");
+        
         let heart = document.createElement("i");
         heart.classList.add("fa-regular", "fa-heart", "card-heart");
         heart.addEventListener("click", () => {
           toggleAddWishlist(product.id, heart);
         });
-  
-        let addToCart = document.createElement("button");
-        addToCart.classList.add("btn", "btn-primary", "add-to-cart");
-        addToCart.textContent = "Add to cart";
+        
+        let addBtn = document.createElement("button");
+        addBtn.classList.add("btn", "btn-primary", "add-to-cart");
+        addBtn.textContent = "Add to Basket";
+        addBtn.addEventListener("click", () => addBasket(product.id))
+        
+        
+        
+        
         rating.append(ratingStar, count);
         cardFooter.append(price, rating);
         cardContent.append(cardTitle, category);
         image.append(img);
-        card.append(heart, image, cardContent, addToCart);
+        card.append(heart, image, cardContent, addBtn);
         let cards = document.querySelector(".cards");
         cards.append(card);
-  
+        
         img.src = product.image;
         cardTitle.textContent = product.title.slice(0, 20) + "...";
         category.textContent = product.category;
@@ -328,21 +347,21 @@ let products = [
         count.textContent = `(${product.rating.count})`;
       });
     }
-  
+    
     function toggleAddWishlist(productId, heartElement) {
       if (!currentUser) {
-        toasts("Please login to add wishlist");
+        toasts("Please login for add to wishlist");
         return;
       }
-  
+      
       if (!Array.isArray(currentUser.wishList)) {
         currentUser.wishList = [];
       }
-  
+      
       let userIndex = users.findIndex(
         (user) => user.username === currentUser.username
       );
-  
+      
       if (currentUser.wishList.some((item) => item.id === productId)) {
         let productIndex = currentUser.wishList.findIndex(
           (product) => product.id === productId
@@ -350,7 +369,7 @@ let products = [
         currentUser.wishList.splice(productIndex, 1);
         users[userIndex] = currentUser;
         localStorage.setItem("users", JSON.stringify(users));
-  
+        
         heartElement.classList.add("fa-regular");
         heartElement.classList.remove("fa-solid");
         toasts("Product removed from wishlist");
@@ -360,7 +379,7 @@ let products = [
           currentUser.wishList.push(product);
           users[userIndex] = currentUser;
           localStorage.setItem("users", JSON.stringify(users));
-  
+          
           heartElement.classList.remove("fa-regular");
           heartElement.classList.add("fa-solid");
           toasts("Product added to wishlist");
@@ -369,8 +388,55 @@ let products = [
         }
       }
     }
+    
+    function addBasket(productId) {
+      let currentUser = getCurrentUser();
+      if (!currentUser) {
+        toast("Please login to add to basket");
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1000);
+        return;
+      }
   
-    function toasts(text) {
+      let userIndex = users.findIndex((user) => user.id === currentUser.id);
+      if (userIndex === -1) {
+        toast("User not found");
+        return;
+      }
+  
+      let basket = currentUser.basket || [];
+      let existingProduct = basket.find((product) => product.id === productId);
+  
+      if (existingProduct) {
+        existingProduct.count++;
+      } else {
+        let product = products.find((product) => product.id === productId);
+        if (product) {
+          basket.push({ ...product, count: 1 });
+        }
+      }
+      toast("Product added basket");
+      currentUser.basket = basket;
+      users[userIndex] = currentUser;
+      localStorage.setItem("users", JSON.stringify(users));
+      updateBasketCount();
+    }
+  
+    function updateBasketCount() {
+      let currentUser = getCurrentUser();
+      if (currentUser) {
+        let basketElement = document.querySelector(".basketIcon sup");
+        let basketCount = currentUser.basket.reduce(
+          (acc, product) => acc + product.count,
+          0
+        );
+        basketElement.textContent = basketCount;
+      }
+    }
+
+
+    function toast(text) {
       Toastify({
         text: text,
         duration: 2000,
