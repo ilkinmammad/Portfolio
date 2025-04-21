@@ -1,0 +1,10 @@
+.header-container{
+    background: url('https://startbootstrap.github.io/startbootstrap-agency/assets/img/header-bg.jpg');
+    height: 100%;
+    padding: 30px 0;
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}

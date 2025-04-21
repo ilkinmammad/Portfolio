@@ -1,0 +1,7 @@
+.navlist-item{
+    text-decoration: none;
+}
+.navlist{
+    display: flex;
+    gap: 20px;
+}
