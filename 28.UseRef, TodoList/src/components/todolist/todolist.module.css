@@ -1,0 +1,78 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+div {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.addBtn {
+    margin: 20px 10px;
+    width: 95%;
+    padding: 10px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addBtn:hover {
+    background-color: #218838;
+}
+
+.list_cont {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.list {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.removeBtn {
+    background-color: #cf1b2d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.editBtn {
+    background-color: #3407ff;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.lineBtn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
