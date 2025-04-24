@@ -1,0 +1,33 @@
+.hero_cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+.btn_div{
+    padding: 40px 0;
+    display: flex;
+    gap: 30px;
+}
+.btn_get{
+    background-color: rgb(59, 88, 215);
+    height: 50px;
+    width: 160px;
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    font-size: large;
+
+}
+.btn_learn{
+    background-color: transparent;
+    height: 50px;
+    width: 160px;
+    color: white;
+    border-radius: 10px;
+    font-size: large;
+    border: 1px solid white;
+
+
+}
