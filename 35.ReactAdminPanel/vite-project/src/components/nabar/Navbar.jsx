@@ -29,8 +29,8 @@ export default function Navbar() {
           </Typography>
           <Link to="/admin"> Admin </Link>
 
-          <Link to="/wishlist"><FavoriteIcon/></Link>
-          <Link to="/basket"> <ShoppingCartIcon/></Link>
+          <Link to="/wishlist"><FavoriteIcon /></Link>
+          <Link to="/basket"> <ShoppingCartIcon /></Link>
 
           <Button color="inherit">Login</Button>
         </Toolbar>

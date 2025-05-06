@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, addProduct  ,removeProduct} from '../../redux/features/productSlice';
+import { fetchProducts, addProduct, removeProduct } from '../../redux/features/productSlice';
+import { Link } from 'react-router-dom';
+import { setDetail } from '../../redux/features/detailSlice';
+
+
 
 
 const Admin = () => {
@@ -22,29 +26,29 @@ const Admin = () => {
     const [price, setPrice] = useState('');
 
     const dispatch = useDispatch();
-    const products = useSelector(state => state.products.products); 
-    
+    const products = useSelector(state => state.products.products);
+
     useEffect(() => {
-      dispatch(fetchProducts());
+        dispatch(fetchProducts());
     }, [dispatch]);
-    
+
 
     const productCreate = async () => {
         const newProduct = { image, title, price: parseFloat(price) };
-      
+
         const response = await axios.post("http://localhost:3000/products", newProduct);
-      
+
         dispatch(addProduct(response.data));
-      
+
         setImage('');
         setTitle('');
         setPrice('');
-      };
-      const productDelete = async (id) => {
+    };
+    const productDelete = async (id) => {
         await axios.delete(`http://localhost:3000/products/${id}`);
         dispatch(removeProduct(id));
-      };
-      
+    };
+
 
 
 
@@ -53,15 +57,15 @@ const Admin = () => {
         <div>
             <div style={{ margin: "20px 0", display: "flex", gap: "10px" }}>
                 <label htmlFor="">Image</label>
-                <input type="url" name='image' value={image} onChange={(e)=>setImage(e.target.value)}/>
+                <input type="url" name='image' value={image} onChange={(e) => setImage(e.target.value)} />
                 <label htmlFor="">Title</label>
-                <input type="text" name='title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
+                <input type="text" name='title' value={title} onChange={(e) => setTitle(e.target.value)} />
                 <label htmlFor="">Price</label>
-                <input type="number" name='price' value={price} onChange={(e)=>setPrice(e.target.value)}/>
+                <input type="number" name='price' value={price} onChange={(e) => setPrice(e.target.value)} />
             </div>
             <button style={{ marginBottom: "20px", backgroundColor: "blue", color: "white", padding: "10px 15px", }}
-                                onClick={productCreate}
-                                >create</button>
+                onClick={productCreate}
+            >create</button>
 
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
@@ -76,7 +80,9 @@ const Admin = () => {
                     {products.map((product) => (
                         <tr key={product.id}>
                             <td style={tdStyle}>
-                                <img src={product.image} alt={product.title} style={{ width: "80px", height: "80px", objectFit: "contain" }} />
+                                <Link to='/detail' onClick={() => { dispatch(setDetail(product)) }}>
+                                    <img src={product.image} alt={product.title} style={{ width: "80px", height: "80px", objectFit: "contain" }} />
+                                </Link>
                             </td>
                             <td style={tdStyle}>{product.title.slice(0, 20)}</td>
                             <td style={tdStyle}>${product.price}</td>

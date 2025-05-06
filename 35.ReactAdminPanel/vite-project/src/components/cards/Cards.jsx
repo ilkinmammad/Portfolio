@@ -10,21 +10,21 @@ const Cards = () => {
 
     const { wishlist } = useSelector((state) => state.wishlist);
     console.log(wishlist);
-    
+
 
 
 
     useEffect(() => {
-        dispatch(fetchProducts());  
+        dispatch(fetchProducts());
     }, [dispatch]);
 
 
     return (
-            <div style={{display:"flex", flexWrap:"wrap",gap:"20px"}}>
-                {products.map((product) => (
-                    <Card key={product.id} product={product}/>
-                ))}
-            </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" ,padding:"0 100px",justifyContent:"center"}}>
+            {products.map((product) => (
+                <Card key={product.id} product={product} />
+            ))}
+        </div>
     );
 };
 

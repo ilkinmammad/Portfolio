@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBasket } from '../../redux/features/basketSlice';  // `addBasket` funksiyasını istifadə edirik
-import { useNavigate } from 'react-router-dom';  // navigate-i import edirik
+import { addBasket } from '../../redux/features/basketSlice';
+import { useNavigate } from 'react-router-dom';
 import './Detail.css';
 
 const Detail = () => {
-  const { detail } = useSelector((state) => state.detail); // `detail`-i store-dan çəkirik
+  const { detail } = useSelector((state) => state.detail);
   const dispatch = useDispatch();
-  const navigate = useNavigate();  // Navigate-i tərtib edirik
+  const navigate = useNavigate();
 
   const handleAddToBasket = () => {
-    dispatch(addBasket(detail));  // Səbətə məhsulu əlavə edirik
-    navigate('/basket');  // Səbət səhifəsinə yönləndiririk
+    dispatch(addBasket(detail));
+    navigate('/basket');
   };
 
   return (
@@ -27,7 +27,7 @@ const Detail = () => {
 
           <div className="detail-footer">
             <span className="detail-price">${detail.price}</span>
-            <button className="detail-button" onClick={handleAddToBasket}>Add to basket</button>  {/* Düymə ilə yönləndirmə */}
+            <button className="detail-button" onClick={handleAddToBasket}>Add to basket</button>
           </div>
         </div>
       </div>

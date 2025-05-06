@@ -30,7 +30,7 @@ app.post('/api/', (req, res) => {
     const data = readDB();
     data.push(newItem);
     writeDB(data);
-    res.status(201).json({ message: 'Əlavə olundu', item: newItem });
+    res.status(201).json({ message: 'elave olundu', item: newItem });
 });
 
 app.delete('/api/:id', (req, res) => {
@@ -41,7 +41,7 @@ app.delete('/api/:id', (req, res) => {
 
     writeDB(newData);
 
-    res.status(200).json({ message: `ID ${id} olan obyekt silindi.` });
+    res.status(200).json({ message: `obyekt silindi.` });
 });
 
 app.put('/api/:id', (req, res) => {
@@ -51,12 +51,12 @@ app.put('/api/:id', (req, res) => {
     const itemIndex = data.findIndex(item => item.id === parseInt(id));
 
     if (itemIndex === -1) {
-        return res.status(404).json({ message: 'Obyekt tapılmadı' });
+        return res.status(404).json({ message: 'obyekt tapilmadi' });
     }
 
     data[itemIndex] = { ...data[itemIndex], ...updatedItem };
     writeDB(data);
-    res.status(200).json({ message: `ID ${id} olan obyekt redaktə olundu.`, item: data[itemIndex] });
+    res.status(200).json({ message: `update olundu`, item: data[itemIndex] });
 });
 
 app.listen(port, () => {

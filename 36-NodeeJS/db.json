@@ -1,19 +1,19 @@
 [
-  {
-    "id": 1,
-    "name": "Məhsul 1",
-    "price": 25
-  },
+    {
+      "id": 1,
+      "name": "Məhsul 1",
+      "price": 25
+    },
 
   {
     "id": 123,
-    "name": "ilkin ve medet gay",
+    "name": "ilkin ve medet ",
     "price": 25
   },
   
   {
     "id": 1323323,
-    "name": "Məhsul gau gayg gay gay gay",
+    "name": "Məhsul yeniledik 3",
     "price": 25
   }
 ]
