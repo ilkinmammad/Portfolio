@@ -1,0 +1,45 @@
+.total{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+height: 600px;
+
+}
+@media (max-width: 430px) {
+  .total {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.choi-cont{
+    width: 40%;
+display: flex;
+flex-direction: column;
+gap: 20px;
+justify-content: center;
+height: 600px;
+padding-bottom: 60px;
+
+p{
+    color: gray;
+    font-size: 16px;
+}
+h2{
+    font-size: 60px;
+    font-weight: 600;
+}
+}
+.choi-image{
+    width: 40%;
+
+}
+.choi-btn{
+    width: 160px;
+    height: 45px;
+    background-color: red;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    
+}

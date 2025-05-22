@@ -1,0 +1,24 @@
+.action{
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+    align-items: center;
+}
+.sort{
+    display: flex;
+    gap: 20px;
+
+    button{
+     width: 120px;
+     height: 30px;
+     background-color: gray;
+     border: 0;
+     color: white;
+     border-radius: 5px;
+    }
+}
+.search{
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}

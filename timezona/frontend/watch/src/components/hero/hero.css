@@ -1,0 +1,44 @@
+.heroback{
+    background-color: rgb(200, 200, 201);
+    height: 700px;
+    margin-bottom: 50px;
+}
+.herocont{
+width: 60%;
+height: 700px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 30px;
+color: #0b1c39;
+h1{
+    font-size: 70px;
+}
+p{
+    font-size: 20px;
+}
+}
+@media(max-width:440px){
+    .herocont{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.space{
+    width: 40%;
+}
+.total{
+    display: flex;
+}
+.herobtn{
+    width: 150px;
+    height: 40px;
+    background-color: rgba(67, 67, 67, 0.489);
+    border: 0;
+    border-radius: 5px;
+    color:#0b1c39;
+
+}

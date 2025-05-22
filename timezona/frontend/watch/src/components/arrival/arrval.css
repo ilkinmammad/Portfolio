@@ -1,0 +1,35 @@
+.arrival{
+    display: flex;
+    justify-content: space-between;
+
+}
+@media(max-width:440px){
+    .arrival{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.arr-cards{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    img{
+        width: 100%;
+    }
+    
+}
+@media(max-width:440px){
+    .arr-cards{
+        width: 80%;
+        gap: 30px;
+    }
+}
+.text{
+    padding: 50px 0;
+    font-size: xx-large;
+}
